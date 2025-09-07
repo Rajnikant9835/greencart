@@ -24,7 +24,7 @@ export const AppContextProvider = ({ children }) => {
     const fetchUser = async () => {
         try {
           const { data } = await axiosInstance.get("/user/is-auth");
-          if (!data.success) {
+          if (!data.success || !data.user) {
             setUser(null);
             setCartItems(JSON.parse(localStorage.getItem('cart')) || {});
             return;
@@ -35,7 +35,7 @@ export const AppContextProvider = ({ children }) => {
       
         
           const localCart = JSON.parse(localStorage.getItem('cart')) || {};
-          const mergedCart = { ...data.user.cartItems, ...localCart };
+          const mergedCart = { ...(data.user.cartItems || {}), ...localCart };
       
           
           try {
