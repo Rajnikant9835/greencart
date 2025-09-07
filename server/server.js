@@ -16,12 +16,10 @@ import { stripeWebhooks } from "./controllers/order.controller.js";
 dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 4000
-// const allowedOrigins = ['http://localhost:5173','https://greencart-tau.vercel.app']
-// const allowedOrigins = ['http://localhost:5173','https://greencart-tau.vercel.app']
-
 const allowedOrigins = [
   'http://localhost:5173',
-  'http://localhost:5174', // add this
+  'http://localhost:5174',
+  'https://greencart-phi-dusky.vercel.app',
   'https://greencart-tau.vercel.app'
 ];
 
