@@ -21,12 +21,10 @@ const Loading = () => {
 
     
     useEffect(() => {
-        if (nextUrl) {
-            setTimeout(() => {
-                navigate(`/${nextUrl}`);
-            }, 5000);
-        }
-    }, [nextUrl, navigate])
+        setTimeout(() => {
+            navigate('/');
+        }, 5000);
+    }, [navigate])
 
     return (
         <div className="flex justify-center items-center h-screen">
